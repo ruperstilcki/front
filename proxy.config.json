@@ -1,0 +1,7 @@
+{
+  "/*":{
+    "target":"http://adjordjevi:QA1610$1990ai@192.168.10.1:3128",
+    "secure":false
+  },
+  "http.proxy": "http://192.168.10.1:3128"
+}
