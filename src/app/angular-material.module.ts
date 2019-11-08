@@ -9,6 +9,8 @@ import {
   MatPaginatorModule,
   MatDialogModule
 } from '@angular/material';
+import {MatListModule} from '@angular/material/list';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   exports: [
@@ -19,7 +21,9 @@ import {
     MatExpansionModule,
     MatProgressSpinnerModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule,
+    MatSidenavModule
   ]
 })
 export class AngularMaterialModule {}
