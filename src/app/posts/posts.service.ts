@@ -81,7 +81,7 @@ export class PostService {
     });
   }
 
-  deletePost(postId: string){
+  deletePost(postId: string) {
     return this.http
     .delete(BACKEND_URL + postId);
   }
