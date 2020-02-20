@@ -1,15 +1,22 @@
 <mat-card>
   <mat-spinner *ngIf="isLoading"></mat-spinner>
-  <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
+  <form [formGroup]= 'loginForm' (ngSubmit)="onLogin()" *ngIf="!isLoading">
+
       <mat-form-field>
-          <input matInput type="email" placeholder="E-Mail" name ="email" ngModel #emailInput="ngModel" required email>
-          <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+          <mat-label><mat-icon matSuffix>account_box</mat-icon><mat-icon matSuffix>email</mat-icon> Username or E-Mail</mat-label>
+          <input matInput type="email" placeholder="Username or E-Mail" formControlName='user'>
+          <mat-error>Please enter a valid username or email.</mat-error>
         </mat-form-field>
 
         <mat-form-field>
-          <input matInput type="password" placeholder="Password" name="password" ngModel #passwordInput="ngModel" required>
-          <mat-error *ngIf="passwordInput.invalid">Please enter a valid password</mat-error>
+          <mat-label><mat-icon matSuffix>vpn_key</mat-icon> Password</mat-label>
+            <input matInput [type]="showPass ? 'text' : 'password'" placeholder="Password" formControlName='password'>
+            <mat-icon matSuffix (click)="showPassword()" class="mat-icon-show-password">{{ showPass ? 'visibility_off' : 'visibility' }}</mat-icon>
+            <mat-error>Please enter a password</mat-error>
         </mat-form-field>
-        <button mat-raised-button color="primary" type="submit">Login</button>
+
+        <hr>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
   </form>
 </mat-card>

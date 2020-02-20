@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form [formGroup]= 'editForm' (ngSubmit)="onSubmit()" *ngIf="!isLoading">
+
+      <mat-form-field>
+          <mat-label><mat-icon matSuffix>email</mat-icon> E-Mail</mat-label>
+          <input matInput type="email" placeholder="E-Mail" formControlName='email'>
+          <mat-error>Please enter a valid email.</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="button">Reset password</button>
+        <hr>
+        <button mat-raised-button color="primary" type="submit" [disabled]="editForm.invalid">Confirm</button>
+  </form>
+</mat-card>

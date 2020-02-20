@@ -1,0 +1,15 @@
+mat-form-field {
+  width: 90%;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid transparent;
+  border-radius: 25px;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+mat-form-field.ng-invalid.ng-touched {
+    border-color: transparent;
+}

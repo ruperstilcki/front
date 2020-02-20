@@ -2,3 +2,21 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-icon-show-password { cursor: pointer;}
+
+mat-form-field {
+  width: 90%;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid transparent;
+  border-radius: 25px;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+mat-form-field.ng-invalid.ng-touched {
+    border-color: transparent;
+}
